@@ -1,14 +1,13 @@
-# GROUP-NAME - lab NUMBER - variant NUMBER
+# UNION - lab 3 - variant 4
 
-This is an example project which demonstrates project structure and necessary
-CI checks. It is not the best structure for real-world projects, but good
-enough for educational purposes.
+- Develop a eDSL for Moore finite state machine.
+- Develop unit tests.
+- Develop input data control in the aspect-oriented style.
 
 ## Project structure
 
-- `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
-   Stateless.
-- `foo_test.py` -- unit and PBT tests for `Foo`.
+- `mfsm.py` -- implementation of `DiscreteEvent` class and `Node `class
+- `mfsm_test.py` -- unit tests for `mfsm`.
 
 ## Features
 
@@ -16,17 +15,11 @@ enough for educational purposes.
 
 ## Contribution
 
-- Aleksandr Penskoi (EMAIL) -- all work.
+- Liao Pengfei (212320014@hdu.edu.cn)
+- Wang Luyao(wlysbox@126.com)
 
 ## Changelog
 
-- 29.03.2022 - 2
-  - Add test coverage.
-- 29.03.2022 - 1
-  - Update README. Add formal sections.
-- 29.03.2022 - 0
-  - Initial
-
-## Design notes
-
-- ...
+- 17.06.2022
+  - Add `mfsm.py`.
+  - Add `mfsm_test.py`.
