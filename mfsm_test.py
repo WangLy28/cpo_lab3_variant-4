@@ -1,5 +1,6 @@
 import unittest
-from mfsm import *
+# from mfsm import*
+from mfsm import DiscreteEvent, Node, source_event
 
 
 # import graphviz
