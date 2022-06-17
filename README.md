@@ -6,7 +6,7 @@
 
 ## Project structure
 
-- `mfsm.py` -- implementation of `DiscreteEvent` class and `Node `class
+- `mfsm.py` -- implementation of `DiscreteEvent` class and `Node`class.
 - `mfsm_test.py` -- unit tests for `mfsm`.
 
 ## Features
