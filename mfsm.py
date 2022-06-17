@@ -101,7 +101,8 @@ class DiscreteEvent(object):
                     continue
                 for v in n.inputs:
                     if v in n2.outputs:
-                        res.append(' n_{} -> n_{}[label="{}"];'.format(j, i, v))
+                        res.append(
+                            ' n_{} -> n_{}[label="{}"];'.format(j, i, v))
             for v in n.outputs:
                 if v in self.outputs:
                     res.append(' n_{} -> {};'.format(i, v))
@@ -117,7 +118,8 @@ class Node(object):
         self.outputs = OrderedDict()
 
     def __repr__(self):
-        return "{} inputs: {} outputs: {}".format(self.name, self.inputs, self.outputs)
+        return "{} inputs: {} outputs: {}".format(
+            self.name, self.inputs, self.outputs)
 
     def input(self, name, latency=1):
         assert name not in self.inputs

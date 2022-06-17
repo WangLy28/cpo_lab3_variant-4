@@ -1,5 +1,7 @@
 import unittest
 from mfsm import *
+
+
 # import graphviz
 
 
@@ -14,13 +16,17 @@ class DiscreteEventTest(unittest.TestCase):
         m.output_port("Halt", latency=1)
 
         def add_load(a, b):
-            n = m.add_node("{}".format(b), lambda a: not a if isinstance(a, bool) else None)
+            n = m.add_node(
+                "{}".format(b), lambda a: not a if isinstance(a, bool)
+                else None)
             n.input(a, 1)
             n.output(b, 1)
 
         def add_convert(a, b, c):
             n = m.add_node("{} and {}".format(a, b),
-                           lambda a, b: a and b if isinstance(a, bool) and isinstance(b, bool) else None)
+                           lambda a, b: a and b if isinstance(a, bool)
+                                                   and isinstance(b, bool)
+                           else None)
             n.input(a, 1)
             n.input(b, 1)
             n.output(c, 1)
@@ -57,7 +63,8 @@ class DiscreteEventTest(unittest.TestCase):
 
     # Node test
     def test_convert_self_state(self):
-        n = Node("convert_self_state", lambda x: not x if isinstance(x, bool) else None)
+        n = Node("convert_self_state",
+                 lambda x: not x if isinstance(x, bool) else None)
         n.input("A", 1)
         n.output("B", 1)
         test_data = [
@@ -69,7 +76,10 @@ class DiscreteEventTest(unittest.TestCase):
             self.assertEqual(n.activate({"A": a}), [source_event("B", b, 1)])
 
     def test_add_convert(self):
-        n = Node("convert", lambda x, y: x and y if isinstance(x, bool) and isinstance(y, bool) else None)
+        n = Node("convert",
+                 lambda x,
+                        y: x and y if isinstance(x,bool)
+                                      and isinstance(y, bool) else None)
         n.input("A", 1)
         n.input("B", 1)
         n.output("C", 1)
@@ -81,7 +91,8 @@ class DiscreteEventTest(unittest.TestCase):
             (True, True, True),
         ]
         for a, b, c in test_data:
-            self.assertEqual(n.activate({"A": a, "B": b}), [source_event("C", c, 1)])
+            self.assertEqual(n.activate({"A": a, "B": b}),
+                             [source_event("C", c, 1)])
 
     def test_convert(self):
         def convert(x):
@@ -101,7 +112,9 @@ class DiscreteEventTest(unittest.TestCase):
             (None, None, None),
         ]
         for a, d1, d0 in test_data:
-            self.assertEqual(n.activate({"A": a}), [source_event("D1", d1, 1), source_event("D0", d0, 2)])
+            self.assertEqual(n.activate({"A": a}),
+                             [source_event("D1", d1, 1),
+                              source_event("D0", d0, 2)])
 
 
 if __name__ == '__main__':
