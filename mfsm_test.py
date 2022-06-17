@@ -24,8 +24,8 @@ class DiscreteEventTest(unittest.TestCase):
 
         def add_convert(a, b, c):
             n = m.add_node("{} and {}".format(a, b),
-                           lambda a, b: a and b if isinstance(a, bool)
-                                                   and isinstance(b, bool)
+                           lambda a, b: a and b
+                           if isinstance(a, bool) and isinstance(b, bool)
                            else None)
             n.input(a, 1)
             n.input(b, 1)
@@ -77,9 +77,8 @@ class DiscreteEventTest(unittest.TestCase):
 
     def test_add_convert(self):
         n = Node("convert",
-                 lambda x,
-                        y: x and y if isinstance(x,bool)
-                                      and isinstance(y, bool) else None)
+                 lambda x, y: x and y
+                 if isinstance(x, bool) and isinstance(y, bool) else None)
         n.input("A", 1)
         n.input("B", 1)
         n.output("C", 1)
