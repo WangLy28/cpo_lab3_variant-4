@@ -1,6 +1,6 @@
 import unittest
 from mfsm import *
-import graphviz
+# import graphviz
 
 
 class DiscreteEventTest(unittest.TestCase):
@@ -50,10 +50,10 @@ class DiscreteEventTest(unittest.TestCase):
         f.write(dot)
         f.close()
 
-        with open("fsm.dot") as f:
-            dot_graph = f.read()
-        dot = graphviz.Source(dot_graph)
-        dot.view()
+        # with open("fsm.dot") as f:
+        #     dot_graph = f.read()
+        # dot = graphviz.Source(dot_graph)
+        # dot.view()
 
     # Node test
     def test_convert_self_state(self):
