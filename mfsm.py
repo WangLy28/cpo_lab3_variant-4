@@ -48,10 +48,6 @@ class DiscreteEvent(object):
                     ))
         return events
 
-
-
-
-
     def _pop_next_event(self, events):
         assert len(events) > 0
 

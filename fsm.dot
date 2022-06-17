@@ -1,0 +1,28 @@
+digraph G {
+ rankdir=LR;
+ Overload[shape=rarrow];
+ Go_Up[shape=rarrow];
+ Going_Up[shape=rarrow];
+ Going_Down[shape=rarrow];
+ Halt[shape=rarrow];
+ n_0[label="Not_Overload"];
+ n_1[label="Go_Down"];
+ n_2[label="Not_Overload and Go_Up"];
+ n_3[label="Not_Overload and Go_Down"];
+ n_4[label="Overload and Go_Up"];
+ n_5[label="Overload and Go_Down"];
+ Overload -> n_0;
+ Go_Up -> n_1;
+ Go_Up -> n_2;
+ n_0 -> n_2[label="Not_Overload"];
+ n_2 -> Going_Up;
+ n_0 -> n_3[label="Not_Overload"];
+ n_1 -> n_3[label="Go_Down"];
+ n_3 -> Going_Down;
+ Overload -> n_4;
+ Go_Up -> n_4;
+ n_4 -> Halt;
+ Overload -> n_5;
+ n_1 -> n_5[label="Go_Down"];
+ n_5 -> Halt;
+}
