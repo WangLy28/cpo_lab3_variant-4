@@ -1,8 +1,8 @@
 from collections import namedtuple, OrderedDict
 import copy
 
-event = namedtuple("Event", "clock node var val")
-source_event = namedtuple("Source_Event", "var val latency")
+event = namedtuple("event", "clock node var val")
+source_event = namedtuple("source_event", "var val latency")
 
 
 class DiscreteEvent(object):
