@@ -23,5 +23,6 @@
   - Add decorators.
 
 ## Design notes
+
 Visualisation of mfsm:
 ![img.png](img.png)

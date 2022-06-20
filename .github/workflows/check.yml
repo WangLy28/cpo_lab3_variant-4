@@ -17,7 +17,7 @@ jobs:
 
       - name: Install development environment
         run: pip install pytest coverage pycodestyle pyflakes mypy
-      
+
       - name: Run tests and show coverage report
         run: |
           coverage run -m pytest --verbose
