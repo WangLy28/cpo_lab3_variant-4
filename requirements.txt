@@ -1,3 +1,2 @@
-python==3.8
 hypothesis
 graphviz~=2.38.0
