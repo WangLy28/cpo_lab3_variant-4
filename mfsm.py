@@ -14,17 +14,33 @@ class DiscreteEvent(object):
         self.state_history = []
         self.event_history = []
 
+    def arg_type(num_args, type_args):
+        def trace(f):
+            def traced(self, *args, **kwargs):
+                if type(args[num_args - 1]) == type_args:
+                    return f(self, *args, **kwargs)
+                else:
+                    print("Wrong Input!")
+                    print(type(args[num_args - 1]))
+                    return 'Wrong Input!'
+            return traced
+        return trace
+
+    @arg_type(1, str)
     def input_port(self, name, latency=1):
         self.inputs[name] = latency
 
+    @arg_type(1, str)
     def output_port(self, name, latency=1):
         self.outputs[name] = latency
 
+    @arg_type(1, str)
     def add_node(self, name, function):
         node = Node(name, function)
         self.nodes.append(node)
         return node
 
+    @arg_type(2, int)
     def _source_events2events(self, source_events, clock):
         events = []
         for se in source_events:

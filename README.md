@@ -9,10 +9,6 @@
 - `mfsm.py` -- implementation of `DiscreteEvent` class and `Node`class.
 - `mfsm_test.py` -- unit tests for `mfsm`.
 
-## Features
-
-- PBT: `test_add_commutative`
-
 ## Contribution
 
 - Liao Pengfei (212320014@hdu.edu.cn)
@@ -23,3 +19,9 @@
 - 17.06.2022
   - Add `mfsm.py`.
   - Add `mfsm_test.py`.
+- 20.06.2022
+  - Add decorators.
+
+## Design notes
+Visualisation of mfsm:
+![img.png](img.png)
